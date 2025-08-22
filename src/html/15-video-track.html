@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/public/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/public/favicon/likelion.svg" type="image/svg" />
+    <title>video 관련 요소</title>
+  </head>
+  <body>
+    <a href="/index.html">Index로 이동</a>
+    <h1>video 관련 요소</h1>
+    <!-- controls는 앞으로 가기, 뒤로가기 등 사용자가 컨트롤 할 수 있는 것을 표시해줌 -->
+    <!-- autoplay muted는 음소거 됐을 때 자동으로 재생한다는 뜻 -->
+    <!-- poster는 썸네일을 결정하게 해준다. -->
+    <!-- track은 영상과 동기화 되는 자막을 쓸 때 씀 -->
+    <!-- 아래 source를 사용하는 이유는 브라우저마다 지원하는 영상 확장자가 달라서
+     브라우저에서 저 중에 지원하는 확장자를 하나 골라서 재생하게 된다. -->
+    <video controls autoplay muted poster="/src/assets/video/poster.jpg">
+      <source src="/src/assets/video/google-developer-stories.webm" type="video/webm" />
+      <source src="/src/assets/video/google-developer-stories.ogg" type="video/ogg" />
+      <source src="/src/assets/video/google-developer-stories.mov" type="video/mov" />
+      <source src="/src/assets/video/google-developer-stories.mp4" type="video/mp4" />
+      <track src="/src/assets/video/stories-en.vtt" kind="captions" srclang="en" label="English Caption" />
+    </video>
+    <hr />
+    <!-- 현업에선 아래처럼 씀. 왜냐면 요즘 브라우저는 거의 다 mp4를 지원하기 때문 -->
+    <video src="/src/assets/video/google-developer-stories.mp4" controls autoplay muted poster="/src/assets/video/poster.jpg">
+      <track src="/src/assets/video/stories-en.vtt" kind="captions" srclang="en" label="English Caption" />
+    </video>
+  </body>
+</html>
