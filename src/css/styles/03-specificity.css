@@ -1,0 +1,24 @@
+/* 본문의 기본 여백 설정 */
+body {
+  margin: 20px;
+  color: gray;
+}
+
+a {
+  color: inherit;
+}
+
+/* 상속 */
+.wrapper {
+  color: purple;
+  border: 1px solid green;
+}
+
+/* 겹침 p.like가 .like보다 가중치가 더 높아서 우선순위에서 우위를 차지한다. */
+h1 + #coding.wrapper p.like {
+  color: blue;
+}
+
+#coding.wrapper .like {
+  color: red !important;
+}
