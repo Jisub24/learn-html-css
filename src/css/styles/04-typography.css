@@ -1,0 +1,63 @@
+body {
+  margin: 20px;
+}
+
+/* 글꼴 */
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+}
+
+/* 글자 크기 .like가 상속받는 폰트 사이즈는 20px x 1.5 x 1.5 = 45px이 된다.*/
+.wrapper {
+  font-size: 20px;
+}
+
+.wrapper blockquote {
+  /* font-size: 1.5em; */
+  font-size: 15px;
+}
+
+.wrapper blockquote {
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+/* 페이지 크기를 조절할 때마다 글자 크기도 같이 바뀌는 반응형 텍스트가 된다 */
+.like {
+  font-size: 5vw;
+}
+
+/* 글꼴 스타일 */
+h1 {
+  font-style: italic;
+}
+
+/* 줄높이 */
+.like {
+  font-size: 30px;
+}
+
+/* 자간 조정하기 */
+h1 {
+  letter-spacing: -0.02em;
+}
+
+/* 정렬  text-align: x축으로 정렬, align-content: y축으로 정렬*/
+.bootcamp {
+  height: 200px;
+  border: 1px solid red;
+  padding: 20px;
+  background-color: var(--yellow);
+  text-align: center;
+  align-content: center;
+}
+
+/* 글자 그림자 : 그림자는 한 개가 아닌 여러겹으로 지정해줄 수 있다.*/
+.bootcamp {
+  text-shadow:
+    1px 1px 2px red,
+    /*x(가로) y(세로) B(블러-> 뽀샤시하게 해줌) c(색깔)*/ 2px 2px 2px orange,
+    3px 3px 2px yellow,
+    4px 4px 2px green;
+}
