@@ -1,0 +1,105 @@
+body {
+  margin: 20px;
+}
+
+/* 아바타 컴포넌트 */
+/* <figure> 요소 사용 */
+.avatar-img {
+  /* 영역이 잘 선택되었는지 확인하는 방법: box-shadow */
+  position: relative;
+  background: transparent;
+
+  --size: 64px; /*사용자 정의 css변수를 선언*/
+
+  width: var(--size);
+  height: var(--size);
+  /* box-shadow: 0 0 0 1px red; */
+}
+
+.avatar-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+span {
+  display: block;
+  width: 28.125%;
+  height: 28.125%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.on {
+  background-color: #4cfe88;
+}
+
+.off {
+  background-color: #dbdbdb;
+}
+
+/* <button> 요소 사용 */
+.avatar-button {
+  background: transparent;
+  padding: 0;
+  border: 0 none;
+  position: relative;
+  /*button요소가 inline이라 살짝 밑에 부분에 여백이 생긴다.
+  이와같은 여백을 없앨 때 vertical-align: top이나 display: block을 쓰면된다.*/
+  vertical-align: top;
+
+  --size: 64px;
+
+  width: var(--size);
+  height: var(--size);
+  /* aspect-ratio: 1/1; 가로/세로 비율을 지정해주는 속성 */
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  /* &는 부모요소가 연결됨 즉, .avatar-button::after와 같은 의미 */
+  &::after {
+    content: '';
+    display: block;
+    width: 28.125%;
+    height: 28.125%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  /* 속성 지정자로 버튼 클릭해서 online일 때 색과 offline일 때 색을 바꿀 수 있게됨.*/
+  &[aria-label='online']::after {
+    background-color: #4cfe88;
+  }
+
+  &[aria-label='offline']::after {
+    background-color: #dbdbdb;
+  }
+}
+
+.avatar-list {
+  background-color: transparent;
+
+  /*li 요소가 float으로 지정해서 ul 요소는 height를 잃어버린다. 
+  왜냐하면 ul 요소의 height가 auto라 콘텐츠에 따라 높이가 달라지기 때문 
+  따라서 li가 float:left면 모두 위로 올라와서 높이가 사라지기 때문에 
+  이 높이를 flow된 요소들의 높이로 되찾기 위해서 display:flow-root를 쓴다.*/
+  display: flow-root;
+  padding: 10px 30px;
+
+  width: 400px;
+  border: 2px solid #fff;
+
+  li {
+    float: left;
+    margin: 10px;
+  }
+}
