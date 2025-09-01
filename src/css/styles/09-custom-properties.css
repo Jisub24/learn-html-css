@@ -1,0 +1,21 @@
+@property --text-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #f0c;
+}
+
+body {
+  margin: 20px;
+  color: var(--text-color);
+}
+
+div {
+  --text-color: #00f;
+  color: var(--text-color);
+
+  /* property에서 --text-color의 속성 값이 상속되지 않게 선언해서 p태그의 color값은 맨 위에 
+  property로 선언한  핑크색이 된다.*/
+  p {
+    color: var(--text-color);
+  }
+}
