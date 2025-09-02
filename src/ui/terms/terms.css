@@ -1,0 +1,94 @@
+body {
+  margin: 20px;
+}
+
+/* 컴포넌트 */
+/* .term {
+  background-color: #ffc;
+  display: flow-root;
+  padding-top: 16px;
+  padding-left: 16px;
+  .subject {
+    display: inline;
+    font-size: 14px;
+    font-weight: 600;
+    color: #296897;
+  }
+
+  .thumbnail {
+    float: left;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+} */
+
+/* 강사님이 짜신 코드 */
+.term {
+  --accent-color: #296897;
+  --text-size: 1rem;
+  font-size: var(--text-size);
+  background-color: transparent;
+  display: flow-root;
+  /* width: 218px; */ /*고정하는 방식은 유연하지 않음*/
+
+  .subject {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.2em;
+    /* width: 142px; */
+  }
+
+  .subject,
+  .description {
+    float: right;
+    width: calc(100% - 76px);
+  }
+
+  .thumbnail {
+    float: left;
+  }
+
+  .description {
+    margin-top: 4px;
+    font-size: var(--text-size);
+  }
+}
+
+/* 레이아웃 */
+.terms {
+  --gray-700: #7a7a7a;
+  --gray-600: #cccccc;
+  --gray-500: #eeeeee;
+  --spacing: 1rem;
+
+  background: var(--gray-600) linear-gradient(var(--gray-600), var(--gray-500));
+  border: 1px solid var(--gray-700);
+  border-radius: 10px;
+  padding: var(--spacing);
+  width: 250px;
+
+  .headline {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing);
+  }
+
+  .term {
+    margin-top: calc(var(--spacing) - 4px);
+  }
+  /* 홀수 번째만 해당 스타일 적용 짝수는 even */
+  & .term:nth-child(2n + 1) {
+    .subject,
+    .description {
+      float: left;
+    }
+
+    .thumbnail {
+      float: right;
+      margin: -right 0;
+    }
+  }
+}
