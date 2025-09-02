@@ -1,0 +1,25 @@
+body {
+  margin: 20px;
+}
+
+/* 유틸리티 바 */
+.utility-bar {
+  text-transform: uppercase; /*영문 소문자를 대문자로 변환*/
+  font-size: 0; /*font-size와 아래 font-size: 1rem으로 인라인 블럭 사이의 공백을 해결*/
+  text-align: right;
+  /* a {
+    text-decoration: none; 사용자 지정 값이 있어서 상속으로 받으면 cascade 돼서 내가 설정하는 값이 적용이 안된다.
+    color: inherit; color 속성도 위에서 선언하여 상속으로 받으려 하면 cascade 돼서 green이 설정이 안된다.
+  } */
+
+  li {
+    display: inline-block;
+  }
+
+  a,
+  [aria-hidden='true'] {
+    display: inherit; /*부모인 li요소의 display 속성에 따라 같이 바뀜*/
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
