@@ -1,0 +1,34 @@
+body {
+  margin: 20px;
+}
+
+/* body 배경색상 */
+body {
+  background: yellow;
+}
+
+/*뷰포트의 너비가 600px을 넘어서면 pink 그 이하면 노란색 배경으로 바뀐다.*/
+/* @media (min-width: 600px) {
+  body {
+    background: pink;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background: aqua;
+  }
+} */
+
+/* 중첩방식 -> 유지보수에 더 편함*/
+body {
+  background: yellow;
+
+  @media (min-width: 600px) {
+    background: pink;
+  }
+
+  @media (min-width: 800px) {
+    background: aqua;
+  }
+}
