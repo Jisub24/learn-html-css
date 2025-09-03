@@ -1,0 +1,89 @@
+body {
+  margin: 20px;
+}
+
+h1 {
+  margin-block-end: 20px;
+}
+
+/* 강사님이 짜신 코드 */
+.members-wrapper {
+  background: var(--white);
+  block-size: 500px;
+  overflow: auto;
+
+  table {
+    border: 1px solid var(--black);
+    width: 100%;
+    /* border 선끼리의 공백을 없애고 선을 얇게 만들어줌 */
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .number {
+    inline-size: 10%;
+  }
+
+  .name {
+    inline-size: 20%;
+  }
+
+  .email {
+    inline-size: 30%;
+  }
+
+  .phone {
+    inline-size: 40%;
+  }
+
+  thead tr {
+    position: sticky;
+    top: 0; /*top이 0으로 sticky가 된다 -> 맨 위에 고정*/
+  }
+
+  thead tr,
+  tfoot tr {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  tbody tr:nth-child(2n) {
+    background: var(--gray);
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+    text-align: center;
+    padding: 0.5em 1em;
+  }
+}
+/* 내가 짠 코드 */
+/* thead th {
+  padding: 10px 40px;
+  background: var(--black);
+  color: var(--white);
+  position: sticky;
+}
+
+tbody tr {
+  background: var(--white);
+
+  td {
+    padding: 10px 40px;
+  }
+}
+
+tbody tr:nth-child(2n) {
+  background: var(--gray);
+}
+
+tfoot {
+  background-color: var(--black);
+  color: var(--white);
+
+  td {
+    padding: 10px 40px;
+    text-align: center;
+  }
+} */
