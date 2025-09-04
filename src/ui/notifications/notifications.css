@@ -40,7 +40,12 @@ svg {
   --gray: #9b9a90;
   --white: #fff;
 
-  border: 1px solid var(--gray);
+  --point-color: var(--green);
+  --text-color: var(--gray);
+  --bg-color: var(--white);
+
+  border: 1px solid currentColor;
+  color: var(--text-color);
   border-radius: 0.25rem;
   padding: 1.25rem;
   display: flex;
@@ -52,6 +57,10 @@ svg {
 .notification-icon {
   /* flex:  */
   flex: 0 0 auto;
+
+  rect {
+    fill: var(--point-color);
+  }
 }
 
 .notification-content {
@@ -62,20 +71,60 @@ svg {
   justify-content: space-between;
   row-gap: 0.25rem;
 
+  strong,
+  time {
+    color: var(--point-color);
+  }
+
   strong {
-    color: var(--green);
     font-size: 1.125rem;
     font-weight: 700;
   }
 
   time {
-    color: var(--green);
     font-size: 0.6875rem;
   }
 
   p {
     inline-size: 100%; /*너비를 overflow 되도록 하여 계행이 이뤄질 수 있게 해줌*/
-    color: var(--gray);
     font-size: 0.875rem;
   }
 }
+
+/* 레이아웃 */
+/* 레이아웃 */
+.notification-wrapper {
+  --gap: 30px;
+
+  /* border: 1px solid red; */
+  display: flex;
+  flex-flow: row wrap;
+  row-gap: var(--gap);
+
+  @media (width > 600px) {
+    column-gap: var(--gap);
+  }
+
+  .notification {
+    inline-size: 100%;
+
+    @media (width > 600px) {
+      inline-size: calc((100% - var(--gap) * 1) / 2);
+    }
+
+    @media (width > 1000px) {
+      inline-size: calc((100% - var(--gap) * 3) / 4);
+    }
+  }
+}
+
+/* @media all and (min-width: 1001px) {
+  .notification-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .notification {
+    
+    inline-size: calc(25% - (var(--gap) / 2));
+  }
+} */
