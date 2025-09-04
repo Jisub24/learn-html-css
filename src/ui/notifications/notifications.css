@@ -1,0 +1,81 @@
+body {
+  margin: 20px;
+}
+/* 내가 짠 코드 */
+/* .notification {
+  --black: #121212;
+  --green: #22be61;
+  --gray: #9b9a90;
+  --white: #fff;
+
+  width: 332px;
+  height: 84px;
+  background: var(--white);
+  display: flex;
+}
+
+svg {
+  margin-inline: 20px;
+  margin-block-start: 20px;
+}
+
+.notification-content {
+  margin-block-start: 20px;
+  display: flow-root;
+  strong {
+    float: left;
+  }
+  time {
+    float: right;
+  }
+  p {
+    float: left;
+  }
+} */
+
+/* 강사님이 짜신 코드 */
+.notification {
+  --black: #121212;
+  --green: #22be61;
+  --gray: #9b9a90;
+  --white: #fff;
+
+  border: 1px solid var(--gray);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 1.25rem;
+  align-items: center;
+}
+
+.notification-icon {
+  /* flex:  */
+  flex: 0 0 auto;
+}
+
+.notification-content {
+  flex: 1 1 0;
+  display: flex;
+  /* 계행이 될 수 있도록 해줌 */
+  flex-flow: wrap;
+  justify-content: space-between;
+  row-gap: 0.25rem;
+
+  strong {
+    color: var(--green);
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  time {
+    color: var(--green);
+    font-size: 0.6875rem;
+  }
+
+  p {
+    inline-size: 100%; /*너비를 overflow 되도록 하여 계행이 이뤄질 수 있게 해줌*/
+    color: var(--gray);
+    font-size: 0.875rem;
+  }
+}
