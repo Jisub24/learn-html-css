@@ -1,0 +1,22 @@
+:root {
+  color-scheme: light dark;
+}
+
+/* light-dark() 함수를 이용한 방법 */
+body {
+  margin: 20px;
+  color: light-dark(var(--black), var(--gray));
+  background: light-dark(var(--gray), var(--dark));
+}
+
+/* Prefers Color Schem - 미디어 쿼리를 이용한 방법 */
+/* body {
+  margin: 20px;
+  background: var(--gray);
+  color: var(--black);
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--black);
+    color: var(--gray);
+  }
+} */
