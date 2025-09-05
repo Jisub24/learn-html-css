@@ -174,3 +174,37 @@ body {
     display: none;
   }
 }
+
+/* 콤보 박스 */
+.combo-box {
+  --text-color: var(--gray-500);
+  background: #ffc;
+
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
+  color: var(--text-color);
+
+  select {
+    inline-size: 100%;
+    text-align: center;
+    padding: 0.25em 1.5em 0.25em 2em;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    appearance: none;
+  }
+
+  svg {
+    position: absolute; /*select 요소가 부모요소 너비만큼 차지할 수 있게 된다.*/
+    pointer-events: none;
+  }
+
+  > svg:nth-of-type(1) {
+    inset-inline-start: 4px;
+  }
+
+  > svg:nth-of-type(2) {
+    inset-inline-end: 4px;
+  }
+}
