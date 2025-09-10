@@ -38,6 +38,7 @@
 /* grid Layout */
 .container {
   display: grid;
+  justify-content: center;
   grid-template-columns: [full-start] 20px [content-start]1fr[content-end] 20px [full-end];
   grid-template-rows: 100px repeat(5, 1fr) 100px;
 
@@ -85,9 +86,8 @@
   }
 
   @media (width>=960px) {
-    grid-template-columns: [full-start] 1fr [content-start] repeat(12, 1fr) [content-end] 1fr [full-end];
+    grid-template-columns: [full-start] 4px [content-start] repeat(12, minmax(62px, 82px)) [content-end] 4px [full-end];
     grid-auto-rows: auto;
-    margin-inline: 20px;
     gap: 16px;
 
     .header,
