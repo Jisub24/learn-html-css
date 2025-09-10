@@ -1,0 +1,58 @@
+body {
+  margin: 20px;
+}
+
+/* CSS Mask */
+.like {
+  inline-size: 400px;
+  block-size: 200px;
+  background: red;
+  font-size: 72px;
+  font-weight: 700;
+  border: 20px solid blue;
+
+  /* mask-image: url(/src/assets/svg/star.svg);
+  mask-origin: content-box;
+  mask-repeat: no-repeat; */
+
+  mask: url(/src/assets/svg/star.svg) content-box no-repeat;
+}
+
+.lion {
+  /* background: red; */
+  --button-color: green;
+
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  inline-size: 50px;
+  block-size: 50px;
+
+  /* background-image: linear-gradient(to bottm, blue 0% 45%, red 45% 55%, green 55% 100%); */
+  background-image: linear-gradient(to bottom, transparent 0% 45%, var(--button-color) 45% 55%, transparent 55% 100%), linear-gradient(to right, transparent 0% 45%, var(--button-color) 45% 55%, transparent 55% 100%);
+}
+
+/* 마스크 이미지 활용 */
+.euid {
+  --button-color: green;
+
+  background-color: var(--button-color);
+  border: 0 none;
+  padding: 0;
+  inline-size: 50px;
+  block-size: 50px;
+
+  /* 투명하지 않은 #000인 부분만 mask-image로 보이게 된다. */
+  mask-image: linear-gradient(to bottom, transparent 0% 45%, #000 45% 55%, transparent 55% 100%), linear-gradient(to right, transparent 0% 45%, #000 45% 55%, transparent 55% 100%);
+}
+
+/* 배경 이미지와 마스크 이미지 활용 */
+.bootcamp {
+  border: 0 none;
+  padding: 0;
+  inline-size: 50px;
+  block-size: 50px;
+  background-color: transparent;
+  background-image: linear-gradient(red, orange, yellow, green, blue, navy, purple);
+  mask: url(/src/assets/svg/sun.svg) no-repeat 0 0 / cover;
+}
