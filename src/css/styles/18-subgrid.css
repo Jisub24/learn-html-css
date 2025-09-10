@@ -1,0 +1,57 @@
+body {
+  margin: 20px;
+}
+
+/* 카드 컴포넌트 */
+.card {
+  border: 1px solid currentColor;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr);
+  /* grid-template-rows: repeat(4, auto); */
+  padding: 16px;
+  gap: 16px;
+
+  figure {
+    aspect-ratio: 2 / 1;
+
+    img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+      object-position: 50% 40%;
+    }
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    background: darkblue;
+    color: white;
+    justify-self: end;
+    padding: 16px;
+    border-radius: 4px;
+  }
+}
+
+/* 카드 레이아웃 */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  grid-template-rows: repeat(4, auto);
+  gap: 16px;
+
+  .card {
+    /* 각각 셀마다 행이 지정되어 있어 컨텐츠 크기가 달라지는데 subgrid를 사용하면
+    부모의 행의 기준인 grid-template-rows: repeat(4, auto);를 따라서 지정이 돼서 모두 동일한 행에 위치하게 된다. 
+    그리고 줄바꿈이 일어나더라도 안전하게 행의 위치가 동일하게 유지된다. */
+    grid-template-rows: subgrid;
+
+    /* grid-row-start: 1;
+    grid-row-end: 5; */
+    grid-row: span 4;
+  }
+}
