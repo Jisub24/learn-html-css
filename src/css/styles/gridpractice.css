@@ -1,0 +1,66 @@
+body {
+  margin: 20px;
+}
+
+a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.grid-container {
+  background: #ffc;
+  border-left: 5px solid black;
+  border-right: 5px solid gray;
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: [full-start] 20px [content-start]1fr[content-end] 20px [full-end];
+  grid-template-rows: 100px 1fr 100px;
+  justify-items: center;
+
+  .box1,
+  .box2,
+  .box3 {
+    grid-column-start: content-start;
+    grid-column-end: content-end;
+  }
+
+  > div:nth-child(1) {
+    background: skyblue;
+    border-left: 5px solid red;
+    border-right: 5px solid green;
+  }
+
+  > div:nth-child(2) {
+    background: blue;
+    border-left: 5px solid red;
+    border-right: 5px solid green;
+  }
+
+  > div:nth-child(3) {
+    background: yellow;
+    border-left: 5px solid red;
+    border-right: 5px solid green;
+  }
+  /* > div:nth-child(4) {
+    background: green;
+  }
+  > div:nth-child(5) {
+    background: greenyellow;
+  }
+  > div:nth-child(6) {
+    background: orange;
+  }
+  > div:nth-child(7) {
+    background: purple;
+  }
+  > div:nth-child(8) {
+    background: skyblue;
+  }
+  > div:nth-child(9) {
+    background: turquoise;
+  }
+  > div:nth-child(10) {
+    background: teal;
+  } */
+}
