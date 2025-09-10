@@ -192,3 +192,57 @@
 /* 푸터 */
 /* .footer {
 } */
+
+:root {
+  --white: #fff;
+  --gray: #878787;
+  --gray-dark: #14182c;
+  --blue-100: #3030e0;
+  --blue-200: #24388d;
+  --blue-300: #111166;
+
+  --start-color: var(--blue-100);
+  --end-color: var(--blue-300);
+}
+
+body {
+  margin: 20px;
+}
+
+/* 이디야 뉴스 */
+.news {
+  background: var(--blue-200);
+  color: var(--white);
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-auto-rows: auto;
+
+  .news-title,
+  a,
+  time {
+    padding: 0.5em; /* 높이를 주는 대신 padding을 줘서 높이를 준 것처럼 보이게 할 수 있다. */
+  }
+
+  .news-list,
+  .news-item {
+    display: contents;
+  }
+
+  /* .news-title,
+  .more {
+    order: -1;
+  } */
+
+  .more {
+    grid-area: 1 / 2;
+    justify-self: end;
+  }
+
+  a:not(.more) {
+    background: purple;
+    white-space: nowrap;
+    overflow: hidden; /* overflow가 되는 것을 없애줌 */
+    text-overflow: ellipsis; /* 공간이 부족하면 말 줄임표 ...이 뜸, 한 줄의 텍스트만 가능 */
+  }
+}
