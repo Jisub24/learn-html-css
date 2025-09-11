@@ -1,0 +1,39 @@
+body {
+  margin: 20px;
+}
+
+/* state가 module 보다 우선순위가 높음. @layer에서 뒤에 오는 게 더 우선순위가 높다. */
+@layer module, state;
+
+/* layer 규칙보다 내가 지정한 스타일이 더 우선순위가 높다. 따라서 밑에 layer state에
+선언한 padding: 50px은 적용이 안 됨*/
+.alert,
+p {
+  padding: 16px;
+}
+
+/* @layer 뒤에 이름을 사용하지 않을 수 있는데 이를 unnamed layer라 한다.
+이때 우선순위는 layer가 없는 스타일 > unnamed layer > state > module순이 된다.*/
+@layer {
+  .alert {
+    background: purple;
+  }
+}
+
+@layer state {
+  .alert {
+    background-color: brown;
+  }
+  p {
+    border: medium solid limegreen;
+    padding: 50px;
+  }
+}
+
+@layer module {
+  .alert {
+    border: medium solid violet;
+    background-color: darkblue;
+    color: white;
+  }
+}
